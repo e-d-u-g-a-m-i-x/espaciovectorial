@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Espacio Vectorial 3D + AR</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body { margin: 0; background: #111; font-family: sans-serif; }
+    model-viewer { width: 100vw; height: 100vh; }
+    #instrucciones {
+      position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+      background: rgba(0,0,0,0.7); color: white; padding: 10px 20px;
+      border-radius: 12px; font-size: 1rem; text-align: center;
+      animation: fadeout 1s ease 8s forwards;
+    }
+    @keyframes fadeout {
+      to { opacity: 0; visibility: hidden; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="instrucciones">
+  👉 Usa tus dedos para mover el modelo en 3D.<br />
+  📱 En móvil, toca "Ver en AR" para activar realidad aumentada.
+</div>
+
+<model-viewer
+  src="espaciovec6.glb"
+  ar
+  ar-modes="webxr"
+  ar-scale="fixed"
+  camera-controls
+  auto-rotate
+  autoplay
+  interaction-prompt="when-focused"
+  environment-image="neutral"
+  shadow-intensity="1"
+  exposure="1.1"
+  alt="Espacio Vectorial Animado"
+  xr-environment
+></model-viewer>
+
+</body>
+</html>
